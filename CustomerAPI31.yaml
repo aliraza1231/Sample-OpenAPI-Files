@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Customer API
   contact:
-    email: ali.raza1231@aoutlook.com
+    email: ali.raza1231@outlook.com
   version: '1.0.0'
 jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
 servers:
