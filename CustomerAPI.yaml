@@ -1,0 +1,67 @@
+openapi: 3.0.1
+info:
+  title: Customer API
+  termsOfService: https://www.little.bz/ke/tnc.php
+  contact:
+    email: ali.raza1231@aoutlook.com
+  version: 1.0.0
+servers:
+  - url: https://customers.little.bz/api/v1
+paths:
+  /customers:
+    post:
+      tags:
+        - Create Customers
+      summary: It will create customers
+      description: You are able to create customer with this endpoint.
+      parameters:
+        - name: id
+          required: false
+          in: query
+          schema:
+            type: integer
+            minimum: 10
+            maximum: 100
+            exclusiveMinimum: true
+            exclusiveMaximum: true
+            format: int32
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+            nullable: true
+          example: Ali
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - kind
+              type: object
+              properties:
+                customerProfile:
+                  type: string
+                  format: base64
+                customerCover:
+                  type: string
+                  format: binary
+        required: false
+      responses:
+        '201':
+          description: Created
+          headers:
+            Content-Type:
+              description: The Content-Type of the response
+              schema:
+                type: string
+            TestHeader:
+              description: The number of allowed requests in the current period
+              schema:
+                type: integer
+          content:
+            text/plain:
+              schema:
+                type: string
+                enum:
+                  - v1
