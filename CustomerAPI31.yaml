@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: Customer API
+  contact:
+    email: ali.raza1231@aoutlook.com
+  version: '1.0.0'
+jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
+servers:
+- url: https://customers.little.bz/api/v1
+  variables: {}
+paths:
+  /customers:
+    post:
+      tags:
+      - Create Customers
+      summary: It will create customers
+      description: You are able to create customer with this endpoint.
+      operationId: Itwillcreatecustomers
+      parameters:
+      - name: id
+        in: query
+        description: ''
+        style: form
+        explode: true
+        schema:
+          exclusiveMaximum: 100
+          exclusiveMinimum: 10
+          type: integer
+          contentEncoding: int32
+      - name: name
+        in: query
+        description: ''
+        required: true
+        style: form
+        explode: true
+        schema:
+          type:
+          - string
+          - 'null'
+          examples:
+          - Ali
+      requestBody:
+        content:
+          multipart/form-data:
+            encoding: {}
+            schema:
+              type: object
+              properties:
+                customerProfile:
+                  type: string
+                  contentEncoding: base64
+                customerCover:
+                  type: string
+                  contentEncoding: base64
+              contentMediaType: multipart/form-data
+        required: false
+      responses:
+        '201':
+          description: Created
+          headers:
+            TestHeader:
+              description: The number of allowed requests in the current period
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                    contentMediaType: text/plain
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CustomersResponse'
+      deprecated: false
+    parameters: []
+components:
+  schemas:
+    CustomersResponse:
+      title: CustomersResponse
+      const: v1
+      type: string
+tags:
+- name: Create Customers
+  description: ''
