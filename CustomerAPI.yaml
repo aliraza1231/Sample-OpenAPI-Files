@@ -3,7 +3,7 @@ info:
   title: Customer API
   termsOfService: https://www.little.bz/ke/tnc.php
   contact:
-    email: ali.raza1231@aoutlook.com
+    email: ali.raza1231@outlook.com
   version: 1.0.0
 servers:
   - url: https://customers.little.bz/api/v1
