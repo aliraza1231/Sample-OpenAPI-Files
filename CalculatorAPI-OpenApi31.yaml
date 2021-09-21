@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: APIMATIC Calculator
+  description: Simple calculator API hosted on APIMATIC
+  contact: {}
+  version: '1.0'
+jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
+servers:
+- url: https://examples.apimatic.io/apps/calculator
+  description: This environment connect to the LIVE calculator API
+  variables: {}
+paths:
+  /{operation}:
+    get:
+      tags:
+      - Simple Calculator
+      summary: Calculate
+      description: Calculates the expression using the specified operation.
+      operationId: Calculate
+      parameters:
+      - name: operation
+        in: path
+        description: The operator to apply on the variables
+        required: true
+        style: simple
+        schema:
+          $ref: '#/components/schemas/OperationType'
+      - name: x
+        in: query
+        description: The LHS value
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+          contentEncoding: double
+      - name: y
+        in: query
+        description: The RHS value
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+          contentEncoding: double
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            text/plain:
+              schema:
+                type: number
+                contentEncoding: double
+                contentMediaType: text/plain
+      deprecated: false
+    parameters: []
+components:
+  schemas:
+    OperationType:
+      title: OperationType
+      enum:
+      - SUM
+      - SUBTRACT
+      - MULTIPLY
+      - DIVIDE
+      type: string
+      description: Possible operators are sum, subtract, multiply, divide
+tags:
+- name: Simple Calculator
+  description: ''
