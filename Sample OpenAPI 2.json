@@ -1,0 +1,2567 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Tester`'><script>\\xE2\\x80\\xAFjavascript:alert(1)</script>",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://api.lowercase.sample.com",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/response/querytemplateformheader/{param`!%&2}": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Form, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Form,Header",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "Represents the value of the custom header",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "maxLength": 1000,
+              "minLength": 2,
+              "pattern": "^[a-z:/.?=&]+$",
+              "type": "string",
+              "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": [
+                "abc",
+                "def"
+              ]
+            }
+          },
+          {
+            "name": "param4",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "example": {
+                "hello": "farhan"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "param3"
+                ],
+                "type": "object",
+                "properties": {
+                  "param3": {
+                    "enum": [
+                      "abc"
+                    ],
+                    "type": "string",
+                    "example": "abc"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      },
+      "patch": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Form, Header1",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Form,Header1",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "Represents the value of the custom header",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "maxLength": 1000,
+              "minLength": 2,
+              "pattern": "^[a-z:/.?=&]+$",
+              "type": "string",
+              "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": [
+                "abc",
+                "def"
+              ]
+            }
+          },
+          {
+            "name": "param4",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "example": {
+                "hello": "farhan"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "param3"
+                ],
+                "type": "object",
+                "properties": {
+                  "param3": {
+                    "enum": [
+                      "abc"
+                    ],
+                    "type": "string",
+                    "example": "abc"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      },
+      "delete": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Form, Header2",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Form,Header2",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "Represents the value of the custom header",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "maxLength": 1000,
+              "minLength": 2,
+              "pattern": "^[a-z:/.?=&]+$",
+              "type": "string",
+              "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": [
+                "abc",
+                "def"
+              ]
+            }
+          },
+          {
+            "name": "param4",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "example": {
+                "hello": "farhan"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      },
+      "put": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Form, Header3",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Form,Header3",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "Represents the value of the custom header",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "maxLength": 1000,
+              "minLength": 2,
+              "pattern": "^[a-z:/.?=&]+$",
+              "type": "string",
+              "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": [
+                "abc",
+                "def"
+              ]
+            }
+          },
+          {
+            "name": "param4",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "example": {
+                "hello": "farhan"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "param3"
+                ],
+                "type": "object",
+                "properties": {
+                  "param3": {
+                    "enum": [
+                      "abc"
+                    ],
+                    "type": "string",
+                    "example": "abc"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/querytemplatebodyheader/{param`!%&2}": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Body, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Body,Header",
+        "parameters": [
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "!@#$%^&*()`~",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "maxProperties": 3,
+              "minProperties": 1,
+              "type": "object",
+              "nullable": true,
+              "example": {
+                "uid": "1123213",
+                "name": "Shahid"
+              }
+            }
+          },
+          {
+            "name": "param3",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date"
+              },
+              "example": [
+                "1994-02-13",
+                "1994-02-13"
+              ]
+            }
+          },
+          {
+            "name": "param4",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "x-testValue": "1994-02-13",
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "nullable": true,
+              "example": "1994-02-13"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Represents the value of the custom header",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "maxLength": 1000,
+                "minLength": 2,
+                "pattern": "^[a-z:/.?=&]+$",
+                "type": "string",
+                "description": "Represents the value of the custom header",
+                "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+              },
+              "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      },
+      "patch": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Body, Header1",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Body,Header1",
+        "parameters": [
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "!@#$%^&*()`~",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "maxProperties": 3,
+              "minProperties": 1,
+              "type": "object",
+              "nullable": true,
+              "example": {
+                "uid": "1123213",
+                "name": "Shahid"
+              }
+            }
+          },
+          {
+            "name": "param3",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date"
+              },
+              "example": [
+                "1994-02-13",
+                "1994-02-13"
+              ]
+            }
+          },
+          {
+            "name": "param4",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "x-testValue": "1994-02-13",
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "nullable": true,
+              "example": "1994-02-13"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Represents the value of the custom header",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "maxLength": 1000,
+                "minLength": 2,
+                "pattern": "^[a-z:/.?=&]+$",
+                "type": "string",
+                "description": "Represents the value of the custom header",
+                "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+              },
+              "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      },
+      "delete": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Body, Header2",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Body,Header2",
+        "parameters": [
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "!@#$%^&*()`~",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "maxProperties": 3,
+              "minProperties": 1,
+              "type": "object",
+              "nullable": true,
+              "example": {
+                "uid": "1123213",
+                "name": "Shahid"
+              }
+            }
+          },
+          {
+            "name": "param3",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date"
+              },
+              "example": [
+                "1994-02-13",
+                "1994-02-13"
+              ]
+            }
+          },
+          {
+            "name": "param4",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "x-testValue": "1994-02-13",
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "nullable": true,
+              "example": "1994-02-13"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      },
+      "put": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Body, Header3",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Body,Header3",
+        "parameters": [
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "!@#$%^&*()`~",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "maxProperties": 3,
+              "minProperties": 1,
+              "type": "object",
+              "nullable": true,
+              "example": {
+                "uid": "1123213",
+                "name": "Shahid"
+              }
+            }
+          },
+          {
+            "name": "param3",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date"
+              },
+              "example": [
+                "1994-02-13",
+                "1994-02-13"
+              ]
+            }
+          },
+          {
+            "name": "param4",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "x-testValue": "1994-02-13",
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "nullable": true,
+              "example": "1994-02-13"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Represents the value of the custom header",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "maxLength": 1000,
+                "minLength": 2,
+                "pattern": "^[a-z:/.?=&]+$",
+                "type": "string",
+                "description": "Represents the value of the custom header",
+                "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+              },
+              "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/querytemplateform/{param`!%&2}": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Form",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Form",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "unix-timestamp",
+              "example": 1484719381
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "format": "date-time-rfc1123",
+              "example": "Sun, 06 Nov 1994 08:49:37 GMT"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "param3"
+                ],
+                "type": "object",
+                "properties": {
+                  "param3": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "1994-02-13T14:01:54.9571247Z"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/querytemplatebody/{param`!%&2}": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Body",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Body",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "example": [
+                "1994-02-13T14:01:54.9571247Z",
+                "1994-02-13T14:01:54.9571247Z"
+              ]
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "maxItems": 4,
+              "minItems": 1,
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "unix-timestamp"
+              },
+              "example": [
+                1484719381,
+                1484719382
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "maxItems": 4,
+                "minItems": 1,
+                "uniqueItems": true,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "date-time-rfc1123"
+                },
+                "description": "",
+                "example": [
+                  "Sun, 06 Nov 1994 08:49:37 GMT",
+                  "Sun, 06 Nov 1994 08:49:38 GMT"
+                ]
+              },
+              "example": [
+                "Sun, 06 Nov 1994 08:49:37 GMT",
+                "Sun, 06 Nov 1994 08:49:38 GMT"
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/querytemplateheader/{param`!%&2}": {
+      "get": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template,Header",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "example": 5147483647
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "Represents the value of the custom header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "number",
+              "format": "double",
+              "example": 2.2
+            }
+          },
+          {
+            "name": "param3",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "multipleOf": 1.0,
+              "maximum": 10.0,
+              "minimum": 0.0,
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/queryformheader": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Form, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Form,Header",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "multipleOf": 1.0,
+                  "maximum": 10.0,
+                  "exclusiveMaximum": true,
+                  "minimum": 0.0,
+                  "exclusiveMinimum": true,
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "example": [
+                [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              ]
+            }
+          },
+          {
+            "name": "param3",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "$ref": "#/components/schemas/Employee"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "param`!%&2"
+                ],
+                "type": "object",
+                "properties": {
+                  "param`!%&2": {
+                    "$ref": "#/components/schemas/Boolean"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/querybodyheader": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Body, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Body,Header",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Employee"
+              },
+              "example": [
+                {
+                  "name": "Shahid Khaliq",
+                  "age": 5147483645,
+                  "address": "H # 531, S # 20",
+                  "uid": "123321",
+                  "birthday": "1994-02-13",
+                  "birthtime": "1994-02-13T14:01:54.9571247Z",
+                  "salary": 20000,
+                  "department": "null",
+                  "joiningDay": "Saturday",
+                  "workingDays": [
+                    "Monday",
+                    "Tuesday",
+                    "Friday"
+                  ],
+                  "boss": {
+                    "personType": "Boss",
+                    "name": "Zeeshan Ejaz",
+                    "age": 5147483645,
+                    "address": "H # 531, S # 20",
+                    "uid": "123321",
+                    "birthday": "1994-02-13",
+                    "birthtime": "1994-02-13T14:01:54.9571247Z",
+                    "salary": 20000,
+                    "department": null,
+                    "joiningDay": "Saturday",
+                    "workingDays": [
+                      "Monday",
+                      "Tuesday",
+                      "Friday"
+                    ],
+                    "dependents": [
+                      {
+                        "name": "Future Wife",
+                        "age": 5147483649,
+                        "address": "H # 531, S # 20",
+                        "uid": "123412",
+                        "birthday": "1994-02-13",
+                        "birthtime": "1994-02-13T14:01:54.9571247Z"
+                      },
+                      {
+                        "name": "Future Kid",
+                        "age": 5147483648,
+                        "address": "H # 531, S # 20",
+                        "uid": "312341",
+                        "birthday": "1994-02-13",
+                        "birthtime": "1994-02-13T14:01:54.9571247Z"
+                      }
+                    ],
+                    "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT",
+                    "promotedAt": 1484719381
+                  },
+                  "dependents": [
+                    {
+                      "name": "Future Wife",
+                      "age": 5147483649,
+                      "address": "H # 531, S # 20",
+                      "uid": "123412",
+                      "birthday": "1994-02-13",
+                      "birthtime": "1994-02-13T14:01:54.9571247Z"
+                    },
+                    {
+                      "name": "Future Kid",
+                      "age": 5147483648,
+                      "address": "H # 531, S # 20",
+                      "uid": "312341",
+                      "birthday": "1994-02-13",
+                      "birthtime": "1994-02-13T14:01:54.9571247Z"
+                    }
+                  ],
+                  "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT"
+                },
+                {
+                  "name": "Shahid Khaliq",
+                  "age": 5147483645,
+                  "address": "H # 531, S # 20",
+                  "uid": "123321",
+                  "birthday": "1994-02-13",
+                  "birthtime": "1994-02-13T14:01:54.9571247Z",
+                  "salary": 20000,
+                  "department": "null",
+                  "joiningDay": "Saturday",
+                  "workingDays": [
+                    "Monday",
+                    "Tuesday",
+                    "Friday"
+                  ],
+                  "boss": {
+                    "personType": "Boss",
+                    "name": "Zeeshan Ejaz",
+                    "age": 5147483645,
+                    "address": "H # 531, S # 20",
+                    "uid": "123321",
+                    "birthday": "1994-02-13",
+                    "birthtime": "1994-02-13T14:01:54.9571247Z",
+                    "salary": 20000,
+                    "department": null,
+                    "joiningDay": "Saturday",
+                    "workingDays": [
+                      "Monday",
+                      "Tuesday",
+                      "Friday"
+                    ],
+                    "dependents": [
+                      {
+                        "name": "Future Wife",
+                        "age": 5147483649,
+                        "address": "H # 531, S # 20",
+                        "uid": "123412",
+                        "birthday": "1994-02-13",
+                        "birthtime": "1994-02-13T14:01:54.9571247Z"
+                      },
+                      {
+                        "name": "Future Kid",
+                        "age": 5147483648,
+                        "address": "H # 531, S # 20",
+                        "uid": "312341",
+                        "birthday": "1994-02-13",
+                        "birthtime": "1994-02-13T14:01:54.9571247Z"
+                      }
+                    ],
+                    "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT",
+                    "promotedAt": 1484719381
+                  },
+                  "dependents": [
+                    {
+                      "name": "Future Wife",
+                      "age": 5147483649,
+                      "address": "H # 531, S # 20",
+                      "uid": "123412",
+                      "birthday": "1994-02-13",
+                      "birthtime": "1994-02-13T14:01:54.9571247Z"
+                    },
+                    {
+                      "name": "Future Kid",
+                      "age": 5147483648,
+                      "address": "H # 531, S # 20",
+                      "uid": "312341",
+                      "birthday": "1994-02-13",
+                      "birthtime": "1994-02-13T14:01:54.9571247Z"
+                    }
+                  ],
+                  "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT"
+                }
+              ]
+            }
+          },
+          {
+            "name": "param3",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Days"
+              },
+              "example": [
+                "Tuesday",
+                "Saturday",
+                "Wednesday",
+                "Monday",
+                "Sunday"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SuiteCode"
+                },
+                "description": "",
+                "example": [
+                  1,
+                  3,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "example": [
+                1,
+                3,
+                4,
+                2,
+                3
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/templateformheader/{param`!%1}": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Template, Form, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Template,Form,Header",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "$ref": "#/components/schemas/testnstringEncoding"
+            }
+          },
+          {
+            "name": "param3",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": [
+                "abc",
+                "def"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "param`!%&2"
+                ],
+                "type": "object",
+                "properties": {
+                  "param`!%&2": {
+                    "maxLength": 1000,
+                    "minLength": 2,
+                    "pattern": "^[a-z:/.?=&]+$",
+                    "type": "string",
+                    "description": "Represents the value of the custom header",
+                    "example": "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/templatebodyheader/{param`!%1}": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Template, Body, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Template,Body,Header",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "abc"
+              ],
+              "type": "string",
+              "example": "abc"
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "example": {
+                "hello": "farhan"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "enum": [
+                  "abc"
+                ],
+                "type": "string",
+                "example": "abc"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/querytemplate/{param`!%&2}": {
+      "get": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Template",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Template",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "!@#$%^&*()`~",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "maxProperties": 3,
+              "minProperties": 1,
+              "type": "object",
+              "nullable": true,
+              "example": {
+                "uid": "1123213",
+                "name": "Shahid"
+              }
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date"
+              },
+              "example": [
+                "1994-02-13",
+                "1994-02-13"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/queryform": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Form",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Form",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "x-testValue": "1994-02-13",
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "nullable": true,
+              "example": "1994-02-13"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "param`!%&2"
+                ],
+                "type": "object",
+                "properties": {
+                  "param`!%&2": {
+                    "type": "number",
+                    "format": "unix-timestamp",
+                    "example": 1484719381
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/queryheader": {
+      "get": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Header",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time-rfc1123",
+              "example": "Sun, 06 Nov 1994 08:49:37 GMT"
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "example": "1994-02-13T14:01:54.9571247Z"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/querybody": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Query, Body",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Query,Body",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "example": [
+                "1994-02-13T14:01:54.9571247Z",
+                "1994-02-13T14:01:54.9571247Z"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "maxItems": 4,
+                "minItems": 1,
+                "uniqueItems": true,
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "unix-timestamp"
+                },
+                "description": "",
+                "example": [
+                  1484719381,
+                  1484719382
+                ]
+              },
+              "example": [
+                1484719381,
+                1484719382
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/templateform/{param`!%1}": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Template, Form",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Template,Form",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "maxItems": 4,
+              "minItems": 1,
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date-time-rfc1123"
+              },
+              "example": [
+                "Sun, 06 Nov 1994 08:49:37 GMT",
+                "Sun, 06 Nov 1994 08:49:38 GMT"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "param`!%&2"
+                ],
+                "type": "object",
+                "properties": {
+                  "param`!%&2": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 5147483647
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/templatebody/{param`!%1}": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Template, Body",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Template,Body",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "path",
+            "description": "Represents the value of the custom header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "number",
+              "format": "double",
+              "example": 2.2
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "multipleOf": 1.0,
+                "maximum": 10.0,
+                "minimum": 0.0,
+                "type": "integer",
+                "format": "int32",
+                "example": 2
+              },
+              "example": 2
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/templateheader/{param`!%1}": {
+      "get": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Template, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Template,Header",
+        "parameters": [
+          {
+            "name": "param`!%1",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "multipleOf": 1.0,
+                  "maximum": 10.0,
+                  "exclusiveMaximum": true,
+                  "minimum": 0.0,
+                  "exclusiveMinimum": true,
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "example": [
+                [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              ]
+            }
+          },
+          {
+            "name": "param`!%&2",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "deprecated": true,
+            "style": "simple",
+            "schema": {
+              "$ref": "#/components/schemas/Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/formheader": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Form, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Form,Header",
+        "parameters": [
+          {
+            "name": "param`!%&2",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Employee"
+              },
+              "example": [
+                {
+                  "name": "Shahid Khaliq",
+                  "age": 5147483645,
+                  "address": "H # 531, S # 20",
+                  "uid": "123321",
+                  "birthday": "1994-02-13",
+                  "birthtime": "1994-02-13T14:01:54.9571247Z",
+                  "salary": 20000,
+                  "department": "null",
+                  "joiningDay": "Saturday",
+                  "workingDays": [
+                    "Monday",
+                    "Tuesday",
+                    "Friday"
+                  ],
+                  "boss": {
+                    "personType": "Boss",
+                    "name": "Zeeshan Ejaz",
+                    "age": 5147483645,
+                    "address": "H # 531, S # 20",
+                    "uid": "123321",
+                    "birthday": "1994-02-13",
+                    "birthtime": "1994-02-13T14:01:54.9571247Z",
+                    "salary": 20000,
+                    "department": null,
+                    "joiningDay": "Saturday",
+                    "workingDays": [
+                      "Monday",
+                      "Tuesday",
+                      "Friday"
+                    ],
+                    "dependents": [
+                      {
+                        "name": "Future Wife",
+                        "age": 5147483649,
+                        "address": "H # 531, S # 20",
+                        "uid": "123412",
+                        "birthday": "1994-02-13",
+                        "birthtime": "1994-02-13T14:01:54.9571247Z"
+                      },
+                      {
+                        "name": "Future Kid",
+                        "age": 5147483648,
+                        "address": "H # 531, S # 20",
+                        "uid": "312341",
+                        "birthday": "1994-02-13",
+                        "birthtime": "1994-02-13T14:01:54.9571247Z"
+                      }
+                    ],
+                    "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT",
+                    "promotedAt": 1484719381
+                  },
+                  "dependents": [
+                    {
+                      "name": "Future Wife",
+                      "age": 5147483649,
+                      "address": "H # 531, S # 20",
+                      "uid": "123412",
+                      "birthday": "1994-02-13",
+                      "birthtime": "1994-02-13T14:01:54.9571247Z"
+                    },
+                    {
+                      "name": "Future Kid",
+                      "age": 5147483648,
+                      "address": "H # 531, S # 20",
+                      "uid": "312341",
+                      "birthday": "1994-02-13",
+                      "birthtime": "1994-02-13T14:01:54.9571247Z"
+                    }
+                  ],
+                  "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT"
+                },
+                {
+                  "name": "Shahid Khaliq",
+                  "age": 5147483645,
+                  "address": "H # 531, S # 20",
+                  "uid": "123321",
+                  "birthday": "1994-02-13",
+                  "birthtime": "1994-02-13T14:01:54.9571247Z",
+                  "salary": 20000,
+                  "department": "null",
+                  "joiningDay": "Saturday",
+                  "workingDays": [
+                    "Monday",
+                    "Tuesday",
+                    "Friday"
+                  ],
+                  "boss": {
+                    "personType": "Boss",
+                    "name": "Zeeshan Ejaz",
+                    "age": 5147483645,
+                    "address": "H # 531, S # 20",
+                    "uid": "123321",
+                    "birthday": "1994-02-13",
+                    "birthtime": "1994-02-13T14:01:54.9571247Z",
+                    "salary": 20000,
+                    "department": null,
+                    "joiningDay": "Saturday",
+                    "workingDays": [
+                      "Monday",
+                      "Tuesday",
+                      "Friday"
+                    ],
+                    "dependents": [
+                      {
+                        "name": "Future Wife",
+                        "age": 5147483649,
+                        "address": "H # 531, S # 20",
+                        "uid": "123412",
+                        "birthday": "1994-02-13",
+                        "birthtime": "1994-02-13T14:01:54.9571247Z"
+                      },
+                      {
+                        "name": "Future Kid",
+                        "age": 5147483648,
+                        "address": "H # 531, S # 20",
+                        "uid": "312341",
+                        "birthday": "1994-02-13",
+                        "birthtime": "1994-02-13T14:01:54.9571247Z"
+                      }
+                    ],
+                    "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT",
+                    "promotedAt": 1484719381
+                  },
+                  "dependents": [
+                    {
+                      "name": "Future Wife",
+                      "age": 5147483649,
+                      "address": "H # 531, S # 20",
+                      "uid": "123412",
+                      "birthday": "1994-02-13",
+                      "birthtime": "1994-02-13T14:01:54.9571247Z"
+                    },
+                    {
+                      "name": "Future Kid",
+                      "age": 5147483648,
+                      "address": "H # 531, S # 20",
+                      "uid": "312341",
+                      "birthday": "1994-02-13",
+                      "birthtime": "1994-02-13T14:01:54.9571247Z"
+                    }
+                  ],
+                  "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT"
+                }
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "param`!%1"
+                ],
+                "type": "object",
+                "properties": {
+                  "param`!%1": {
+                    "$ref": "#/components/schemas/Employee"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/response/bodyheader": {
+      "post": {
+        "tags": [
+          "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>"
+        ],
+        "summary": "Body, Header",
+        "description": "This is a test description for date thingy $#@!$%^&*()~`%x('ls -al /')",
+        "operationId": "Body,Header",
+        "parameters": [
+          {
+            "name": "param`!%&2",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Days"
+              },
+              "example": [
+                "Tuesday",
+                "Saturday",
+                "Wednesday",
+                "Monday",
+                "Sunday"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SuiteCode"
+                },
+                "description": "",
+                "example": [
+                  1,
+                  3,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "example": [
+                1,
+                3,
+                4,
+                2,
+                3
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "x-is-dynamic": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Boolean": {
+        "title": "Boolean",
+        "maxProperties": 6,
+        "minProperties": 1,
+        "required": [
+          "BooleanField1"
+        ],
+        "type": "object",
+        "properties": {
+          "BooleanField1": {
+            "maxLength": 20,
+            "minLength": 1,
+            "pattern": "[A-Za-z]*",
+            "type": "string",
+            "description": "!@#$%^&*()`~",
+            "example": "testValue"
+          }
+        },
+        "externalDocs": {
+          "description": "Swagger URL Custom type level",
+          "url": "http://swagger.io/customtype"
+        },
+        "example": {
+          "BooleanField1": "testvalue"
+        },
+        "deprecated": true,
+        "x-hello": "hello"
+      },
+      "Number": {
+        "title": "Number",
+        "enum": [
+          "Value1",
+          "Value2"
+        ],
+        "type": "string",
+        "externalDocs": {
+          "description": "Swagger URL Custom type level",
+          "url": "http://swagger.io/customtype"
+        },
+        "example": "Value1",
+        "deprecated": true,
+        "x-enum-elements": [
+          {
+            "name": "StringField1",
+            "description": "Description of Value 1"
+          },
+          {
+            "name": "StringField2",
+            "description": "Description of Value 2"
+          }
+        ],
+        "x-hello": "hello"
+      },
+      "Employee": {
+        "title": "Employee",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Person"
+          },
+          {
+            "required": [
+              "department",
+              "dependents",
+              "hiredAt",
+              "joiningDay",
+              "salary",
+              "workingDays"
+            ],
+            "type": "object",
+            "properties": {
+              "department": {
+                "type": "string"
+              },
+              "dependents": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Person"
+                },
+                "description": ""
+              },
+              "hiredAt": {
+                "type": "string",
+                "format": "date-time-rfc1123"
+              },
+              "joiningDay": {
+                "$ref": "#/components/schemas/Days"
+              },
+              "salary": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "workingDays": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Days"
+                },
+                "description": ""
+              },
+              "boss": {
+                "$ref": "#/components/schemas/Person"
+              }
+            },
+            "example": {
+              "name": "Shahid Khaliq",
+              "age": 5147483645,
+              "address": "H # 531, S # 20",
+              "uid": "123321",
+              "birthday": "1994-02-13",
+              "birthtime": "1994-02-13T14:01:54.9571247Z",
+              "salary": 20000,
+              "department": "null",
+              "joiningDay": "Saturday",
+              "workingDays": [
+                "Monday",
+                "Tuesday",
+                "Friday"
+              ],
+              "boss": {
+                "personType": "Boss",
+                "name": "Zeeshan Ejaz",
+                "age": 5147483645,
+                "address": "H # 531, S # 20",
+                "uid": "123321",
+                "birthday": "1994-02-13",
+                "birthtime": "1994-02-13T14:01:54.9571247Z",
+                "salary": 20000,
+                "department": null,
+                "joiningDay": "Saturday",
+                "workingDays": [
+                  "Monday",
+                  "Tuesday",
+                  "Friday"
+                ],
+                "dependents": [
+                  {
+                    "name": "Future Wife",
+                    "age": 5147483649,
+                    "address": "H # 531, S # 20",
+                    "uid": "123412",
+                    "birthday": "1994-02-13",
+                    "birthtime": "1994-02-13T14:01:54.9571247Z"
+                  },
+                  {
+                    "name": "Future Kid",
+                    "age": 5147483648,
+                    "address": "H # 531, S # 20",
+                    "uid": "312341",
+                    "birthday": "1994-02-13",
+                    "birthtime": "1994-02-13T14:01:54.9571247Z"
+                  }
+                ],
+                "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT",
+                "promotedAt": 1484719381
+              },
+              "dependents": [
+                {
+                  "name": "Future Wife",
+                  "age": 5147483649,
+                  "address": "H # 531, S # 20",
+                  "uid": "123412",
+                  "birthday": "1994-02-13",
+                  "birthtime": "1994-02-13T14:01:54.9571247Z"
+                },
+                {
+                  "name": "Future Kid",
+                  "age": 5147483648,
+                  "address": "H # 531, S # 20",
+                  "uid": "312341",
+                  "birthday": "1994-02-13",
+                  "birthtime": "1994-02-13T14:01:54.9571247Z"
+                }
+              ],
+              "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT"
+            }
+          }
+        ]
+      },
+      "Days": {
+        "title": "Days",
+        "enum": [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "type": "string",
+        "description": "A string enum representing days of the week",
+        "example": "Sunday",
+        "x-enum-elements": [
+          {
+            "name": "Sunday",
+            "description": "Sunday fun day"
+          },
+          {
+            "name": "Monday",
+            "description": ""
+          },
+          {
+            "name": "Tuesday",
+            "description": ""
+          },
+          {
+            "name": "Wednesday_",
+            "description": ""
+          },
+          {
+            "name": "Thursday",
+            "description": ""
+          },
+          {
+            "name": "Fri day",
+            "description": ""
+          },
+          {
+            "name": "Saturday",
+            "description": ""
+          }
+        ]
+      },
+      "SuiteCode": {
+        "title": "SuiteCode",
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "description": "A integer based enum representing a Suite in a game of cards",
+        "example": 3,
+        "x-enum-elements": [
+          {
+            "name": "Hearts",
+            "description": "<3"
+          },
+          {
+            "name": "Spades",
+            "description": ""
+          },
+          {
+            "name": "Clubs",
+            "description": ""
+          },
+          {
+            "name": "Diamonds",
+            "description": ""
+          }
+        ]
+      },
+      "Person": {
+        "title": "Person",
+        "required": [
+          "address",
+          "age",
+          "birthday",
+          "birthtime",
+          "name",
+          "uid",
+          "personType"
+        ],
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date"
+          },
+          "birthtime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "uid": {
+            "type": "string"
+          },
+          "personType": {
+            "type": "string"
+          }
+        },
+        "discriminator": {
+          "propertyName": "personType",
+          "mapping": {
+            "Empl": "Employee"
+          },
+          "x-discriminator-value": "Per"
+        },
+        "example": {
+          "name": "Shahid Khaliq",
+          "age": 5147483645,
+          "address": "H # 531, S # 20",
+          "uid": "123321",
+          "birthday": "1994-02-13",
+          "birthtime": "1994-02-13T14:01:54.9571247Z",
+          "salary": 20000,
+          "department": null,
+          "joiningDay": "Saturday",
+          "workingDays": [
+            "Monday",
+            "Tuesday",
+            "Friday"
+          ],
+          "boss": {
+            "personType": "Boss",
+            "name": "Zeeshan Ejaz",
+            "age": 5147483645,
+            "address": "H # 531, S # 20",
+            "uid": "123321",
+            "birthday": "1994-02-13",
+            "birthtime": "1994-02-13T14:01:54.9571247Z",
+            "salary": 20000,
+            "department": null,
+            "joiningDay": "Saturday",
+            "workingDays": [
+              "Monday",
+              "Tuesday",
+              "Friday"
+            ],
+            "dependents": [
+              {
+                "name": "Future Wife",
+                "age": 5147483649,
+                "address": "H # 531, S # 20",
+                "uid": "123412",
+                "birthday": "1994-02-13",
+                "birthtime": "1994-02-13T14:01:54.9571247Z"
+              },
+              {
+                "name": "Future Kid",
+                "age": 5147483648,
+                "address": "H # 531, S # 20",
+                "uid": "312341",
+                "birthday": "1994-02-13",
+                "birthtime": "1994-02-13T14:01:54.9571247Z"
+              }
+            ],
+            "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT",
+            "promotedAt": 1484719381
+          },
+          "dependents": [
+            {
+              "name": "Future Wife",
+              "age": 5147483649,
+              "address": "H # 531, S # 20",
+              "uid": "123412",
+              "birthday": "1994-02-13",
+              "birthtime": "1994-02-13T14:01:54.9571247Z"
+            },
+            {
+              "name": "Future Kid",
+              "age": 5147483648,
+              "address": "H # 531, S # 20",
+              "uid": "312341",
+              "birthday": "1994-02-13",
+              "birthtime": "1994-02-13T14:01:54.9571247Z"
+            }
+          ],
+          "hiredAt": "Sun, 06 Nov 1994 08:49:37 GMT"
+        }
+      },
+      "testnstringEncoding": {
+        "title": "testnstringEncoding",
+        "required": [
+          "field",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "farhan",
+          "field": "QA"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>",
+      "description": ""
+    }
+  ]
+}

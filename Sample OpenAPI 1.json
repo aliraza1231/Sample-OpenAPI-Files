@@ -1,0 +1,865 @@
+{
+   "openapi": "3.0.1",
+   "info": {
+      "title": "Multiple Responses Test API",
+      "termsOfService": "https://www.little.bz/ke/tnc.php",
+      "contact": {
+         "email": "heri@little.bz"
+      },
+      "version": "1.0.0"
+   },
+   "servers": [
+      {
+         "url": "https://sms.little.bz/api/v1"
+      }
+   ],
+   "paths": {
+      "/message": {
+         "post": {
+            "tags": [
+               "Send Messages"
+            ],
+            "summary": "Send both multiple and single messages",
+            "description": "You are able to send both the single and multiple messages with this endpoint. Notice for the multiple endpoint use an array in the `to` parameter",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                     "type": "number"
+                  },
+                  "example": 3
+               },
+               {
+                  "name": "list",
+                  "required": false,
+                  "in": "query",
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "integer"
+                     }
+                  },
+                  "example": [
+                     3,
+                     4,
+                     5
+                  ]
+               }
+            ],
+            "requestBody": {
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "type": "integer"
+                     },
+                     "example": 3
+                  }
+               },
+               "required": true
+            },
+            "responses": {
+               "100": {
+                  "description": "Continue",
+                  "headers": {
+                     "Content-Type": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     },
+                     "TestHeader": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     }
+                  },
+                  "content": {
+                     "text/plain": {
+                        "schema": {
+                           "type": "number",
+                           "maximum": 100,
+                           "minimum": 1
+                        },
+                        "example": 5
+                     },
+                     "application/json": {
+                        "schema": {
+                           "type": "array",
+                           "items": {
+                              "$ref": "#/components/schemas/SuccessResponseModel"
+                           }
+                        },
+                        "example": [
+                           {
+                              "status": true,
+                              "message": "this is just an example"
+                           }
+                        ]
+                     },
+                     "text/*":{
+                        "schema":{
+                           "type":"number",
+                           "maximum":100,
+                           "minimum":1
+                        },
+                        "example":5
+                     },
+                     "*/*":{
+                        "schema":{
+                           "type":"array",
+                           "items":{
+                              "$ref":"#/components/schemas/SuccessResponseModel"
+                           }
+                        },
+                        "example":"[{\"status\":true,\r\n\"message\": \"this is just an example\"}]"
+                     }                   
+                  }
+               },
+               "200": {
+                  "description": "OK",
+                  "headers": {
+                     "Content-Type": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "string"
+                        }
+                     },
+                     "TestHeader": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     }
+                  },
+                  "content": {
+                     "text/plain": {
+                        "schema": {
+                           "type": "string",
+                           "maxLength": 100,
+                           "minLength": 3
+                        },
+                        "example": "this is an example"
+                     },
+                     "application/json": {
+                        "schema": {
+                           "type": "array",
+                           "items": {
+                              "$ref": "#/components/schemas/MultipleMessageModel"
+                           }
+                        },
+                        "example": [
+                           {
+                              "from": "Littlecab",
+                              "to": [
+                                 "+254700000001",
+                                 "+254700000002",
+                                 "+254700000003"
+                              ],
+                              "text": "Welcome to our Little world."
+                           }
+                        ]
+                     },
+                     "text/*":{
+                        "schema":{
+                           "type":"number",
+                           "maximum":100,
+                           "minimum":1
+                        },
+                        "example":5
+                     },
+                     "*/*":{
+                        "schema":{
+                           "type":"array",
+                           "items":{
+                              "$ref":"#/components/schemas/SuccessResponseModel"
+                           }
+                        },
+                        "example":"[{\"status\":true,\r\n\"message\": \"this is just an example\"}]"
+                     }                     
+                  }
+               },
+               "201": {
+                  "description": "Continue",
+                  "headers": {
+                     "Content-Type": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     },
+                     "TestHeader": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     }
+                  },
+                  "content": {
+                     "text/plain": {
+                        "schema": {
+                           "type": "number",
+                           "maximum": 100,
+                           "minimum": 1
+                        },
+                        "example": 5
+                     },
+                     "application/json": {
+                        "schema": {
+                           "type": "array",
+                           "items": {
+                              "$ref": "#/components/schemas/SingleMessageModel"
+                           }
+                        }
+                     },
+                     "text/*":{
+                        "schema":{
+                           "type":"number",
+                           "maximum":100,
+                           "minimum":1
+                        },
+                        "example":5
+                     },
+                     "*/*":{
+                        "schema":{
+                           "type":"array",
+                           "items":{
+                              "$ref":"#/components/schemas/SuccessResponseModel"
+                           }
+                        },
+                        "example":"[{\"status\":true,\r\n\"message\": \"this is just an example\"}]"
+                     }                     
+                  }
+               },
+               "202": {
+                  "description": "Continue",
+                  "headers": {
+                     "Content-Type": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     },
+                     "TestHeader": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     }
+                  },
+                  "content": {
+                     "text/plain": {
+                        "schema": {
+                           "type": "number",
+                           "maximum": 100,
+                           "minimum": 1
+                        },
+                        "example": 5
+                     },
+                     "application/json": {
+                        "schema": {
+                           "type": "array",
+                           "items": {
+                              "$ref": "#/components/schemas/MultipleMessageModel"
+                           }
+                        }
+                     },
+                     "text/*":{
+                        "schema":{
+                           "type":"number",
+                           "maximum":100,
+                           "minimum":1
+                        },
+                        "example":5
+                     },
+                     "*/*":{
+                        "schema":{
+                           "type":"array",
+                           "items":{
+                              "$ref":"#/components/schemas/SuccessResponseModel"
+                           }
+                        },
+                        "example":"[{\"status\":true,\r\n\"message\": \"this is just an example\"}]"
+                     }                     
+                  }
+               },
+               "300": {
+                  "description": "Multiple Choices",
+                  "content": {}
+               },
+               "404": {
+                  "description": "Not found",
+                  "headers": {
+                     "Content-Type": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     },
+                     "TestHeader": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     }
+                  },
+                  "content": {
+                     "text/plain": {
+                        "schema": {
+                           "type": "number",
+                           "maximum": 100,
+                           "minimum": 1
+                        },
+                        "example": 5
+                     },
+                     "application/json": {
+                        "schema": {
+                           "type": "array",
+                           "items": {
+                              "$ref": "#/components/schemas/FailureResponseModel"
+                           }
+                        }
+                     },
+                     "text/*":{
+                        "schema":{
+                           "type":"number",
+                           "maximum":100,
+                           "minimum":1
+                        },
+                        "example":5
+                     },
+                     "*/*":{
+                        "schema":{
+                           "type":"array",
+                           "items":{
+                              "$ref":"#/components/schemas/SuccessResponseModel"
+                           }
+                        },
+                        "example":"[{\"status\":true,\r\n\"message\": \"this is just an example\"}]"
+                     }                     
+                  }
+               },
+               "500": {
+                  "description": "Internal server error",
+                  "headers": {
+                     "Content-Type": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     },
+                     "TestHeader": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     }
+                  },
+                  "content": {
+                     "text/plain": {
+                        "schema": {
+                           "type": "number",
+                           "maximum": 100,
+                           "minimum": 1
+                        },
+                        "example": 5
+                     },
+                     "application/json": {
+                        "schema": {
+                           "type": "array",
+                           "items": {
+                              "$ref": "#/components/schemas/FailureResponseModel"
+                           }
+                        }
+                     },
+                     "text/*":{
+                        "schema":{
+                           "type":"number",
+                           "maximum":100,
+                           "minimum":1
+                        },
+                        "example":5
+                     },
+                     "*/*":{
+                        "schema":{
+                           "type":"array",
+                           "items":{
+                              "$ref":"#/components/schemas/SuccessResponseModel"
+                           }
+                        },
+                        "example":"[{\"status\":true,\r\n\"message\": \"this is just an example\"}]"
+                     }                     
+                  }
+               },
+               "default": {
+                  "description": "Continue",
+                  "headers": {
+                     "Content-Type": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     },
+                     "TestHeader": {
+                        "description": "The number of allowed requests in the current period",
+                        "schema": {
+                           "type": "integer"
+                        }
+                     }
+                  },
+                  "content": {
+                     "text/plain": {
+                        "schema": {
+                           "type": "number",
+                           "maximum": 100,
+                           "minimum": 1
+                        },
+                        "example": 5
+                     },
+                     "application/json": {
+                        "schema": {
+                           "type": "array",
+                           "items": {
+                              "$ref": "#/components/schemas/SuccessResponseModel"
+                           }
+                        }
+                     },
+                     "text/*":{
+                        "schema":{
+                           "type":"number",
+                           "maximum":100,
+                           "minimum":1
+                        },
+                        "example":5
+                     },
+                     "*/*":{
+                        "schema":{
+                           "type":"array",
+                           "items":{
+                              "$ref":"#/components/schemas/SuccessResponseModel"
+                           }
+                        },
+                        "example":"[{\"status\":true,\r\n\"message\": \"this is just an example\"}]"
+                     }                     
+                  }
+               }
+            }
+         }
+      },
+      "/message/inline-model": {
+         "post": {
+            "tags": [
+               "Send Messages"
+            ],
+            "summary": "Send single messages",
+            "description": "You are able to send both single messages with this endpoint. `to` parameter should be a simple string with the user's mobile number in international format",
+            "requestBody": {
+               "content": {
+                  "text/plain": {
+                     "schema": {
+                        "type": "string"
+                     },
+                     "example": "parameter"
+                  }
+               },
+               "required": true
+            },
+            "responses": {
+               "200": {
+                  "description": "Successful Response",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "type": "object",
+                           "properties": {
+                              "channelId": {
+                                 "type": "string"
+                              },
+                              "videoId": {
+                                 "type": "string"
+                              }
+                           },
+                           "description": ""
+                        },
+                        "example": {
+                           "videoId": "bN8_-fU3Rvg"
+                        }
+                     }
+                  }
+               },
+               "201": {
+                  "description": "Successful Response",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "required": [
+                              "kind"
+                           ],
+                           "type": "object",
+                           "properties": {
+                              "kind": {
+                                 "type": "string"
+                              },
+                              "channelId": {
+                                 "type": "string"
+                              },
+                              "videoId": {
+                                 "type": "string"
+                              },
+                              "playlistId": {
+                                 "type": "string"
+                              }
+                           },
+                           "description": ""
+                        },
+                        "example": {
+                           "kind": "youtube#video",
+                           "videoId": "bN8_-fU3Rvg"
+                        }
+                     }
+                  }
+               },
+               "400": {
+                  "description": "Error Response",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "title": "pageInfoType",
+                           "required": [
+                              "totalResults",
+                              "resultsPerPage"
+                           ],
+                           "type": "object",
+                           "properties": {
+                              "totalResults": {
+                                 "type": "integer",
+                                 "format": "int32"
+                              },
+                              "resultsPerPage": {
+                                 "type": "integer",
+                                 "format": "int32"
+                              }
+                           },
+                           "description": ""
+                        },
+                        "example": {
+                           "totalResults": 1000000,
+                           "resultsPerPage": 5
+                        }
+                     }
+                  }
+               },
+               "500": {
+                  "description": "Error Response",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "title": "itemsType",
+                           "required": [
+                              "kind",
+                              "etag",
+                              "id"
+                           ],
+                           "type": "object",
+                           "properties": {
+                              "kind": {
+                                 "type": "string"
+                              },
+                              "etag": {
+                                 "type": "string"
+                              },
+                              "id": {
+                                 "$ref": "#/components/schemas/idType"
+                              }
+                           },
+                           "description": "",
+                           "example": {
+                              "kind": "youtube#searchResult",
+                              "etag": "werMF7qAAanMZOXDTFPet8cOO9Q",
+                              "id": {
+                                 "kind": "youtube#playlist",
+                                 "channelId": "PLoFFlx7RPQHxTnD4mh4flk2OWliQg9TIj"
+                              }
+                           }
+                        }
+                     }
+                  }
+               },
+               "default": {
+                  "description": "Error Response",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "type": "object",
+                           "properties": {
+                              "name": {
+                                 "type": "string",
+                                 "maxLength": 100,
+                                 "minLength": 3
+                              }
+                           }
+                        },
+                        "example": {
+                           "name": "Commons"
+                        }
+                     }
+                  }
+               }
+            },
+            "x-unitTests": [
+               {
+                  "request": {
+                     "method": "POST",
+                     "uri": "/message/inline-model",
+                     "body": "parameter",
+                     "headers": {
+                        "Content-Type": "text/plain"
+                     }
+                  },
+                  "expectedResponse": {
+                     "x-allowExtraHeaders": true,
+                     "x-bodyMatchMode": "NONE",
+                     "x-arrayOrderedMatching": false,
+                     "x-arrayCheckCount": false,
+                     "x-matchResponseSchema": true,
+                     "statusCode": "200",
+                     "headers": {
+                        "Content-Type": "application/json"
+                     }
+                  },
+                  "x-testShouldPass": true,
+                  "x-testEnabled": true,
+                  "x-testName": "Test Inline Models",
+                  "x-testDescription": "You are able single message with this endpoint. Notice for the multiple endpoint use an array in the `to` parameter"
+               },
+               {
+                  "request": {
+                     "method": "POST",
+                     "uri": "/message/inline-model",
+                     "body": "parameter",
+                     "headers": {
+                        "Content-Type": "text/plain"
+                     }                     
+                  },
+                  "expectedResponse": {
+                     "x-allowExtraHeaders": true,
+                     "x-bodyMatchMode": "NONE",
+                     "x-arrayOrderedMatching": false,
+                     "x-arrayCheckCount": false,
+                     "x-matchResponseSchema": true,
+                     "statusCode": "201",
+                     "headers": {
+                        "Content-Type": "application/json"
+                     }
+                  },
+                  "x-testShouldPass": true,
+                  "x-testEnabled": true,
+                  "x-testName": "Test Inline Models 1",
+                  "x-testDescription": "You are able single message with this endpoint. Notice for the multiple endpoint use an array in the `to` parameter"
+               }
+            ]
+         }
+      },
+      "/message/ranges": {
+         "post": {
+            "tags": [
+               "Send Messages"
+            ],
+            "summary": "Send single messages",
+            "description": "You are able to send both single messages with this endpoint. `to` parameter should be a simple string with the user's mobile number in international format",
+            "requestBody": {
+               "content": {
+                  "text/plain": {
+                     "schema": {
+                        "type": "string"
+                     },
+                     "example": "parameter"
+                  }
+               },
+               "required": true
+            },
+            "responses": {
+               "2XX": {
+                  "description": "Successful Response",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "type": "object",
+                           "properties": {
+                              "channelId": {
+                                 "type": "string"
+                              },
+                              "videoId": {
+                                 "type": "string"
+                              }
+                           },
+                           "description": ""
+                        },
+                        "example": {
+                           "videoId": "bN8_-fU3Rvg"
+                        }
+                     }
+                  }
+               }
+            },
+            "x-unitTests": [
+               {
+                  "request": {
+                     "method": "POST",
+                     "uri": "/message/range",
+                     "body": "parameter",
+                     "headers": {
+                        "Content-Type": "text/plain"
+                     }                     
+                  },
+                  "expectedResponse": {
+                     "x-allowExtraHeaders": true,
+                     "x-bodyMatchMode": "NONE",
+                     "x-arrayOrderedMatching": false,
+                     "x-arrayCheckCount": false,
+                     "x-matchResponseSchema": true,
+                     "statusCode": "2XX",
+                     "headers": {
+                        "Content-Type": "application/json"
+                     }
+                  },
+                  "x-testShouldPass": true,
+                  "x-testEnabled": true,
+                  "x-testName": "Test Ranges",
+                  "x-testDescription": "You are able single message with this endpoint. Notice for the multiple endpoint use an array in the `to` parameter"
+               }
+            ]
+         }
+      }
+   },
+   "components": {
+      "schemas": {
+         "SingleMessageModel": {
+            "type": "object",
+            "properties": {
+               "from": {
+                  "type": "string",
+                  "description": "The SMS header you would like to use, these should be registered under the account being managed by the API KEY used.",
+                  "example": "Littlecab"
+               },
+               "to": {
+                  "type": "string",
+                  "description": "Mobile number of the recipient of the message with the country code included",
+                  "example": "+254700000001"
+               },
+               "text": {
+                  "type": "string",
+                  "description": "Your message to the recipient user",
+                  "example": "Welcome to our Little world."
+               }
+            },
+            "description": "Any payload to send a single message should be in this format"
+         },
+         "MultipleMessageModel": {
+            "type": "object",
+            "properties": {
+               "from": {
+                  "type": "string",
+                  "description": "The SMS header you would like to use, these should be registered under the account being managed by the API KEY used.",
+                  "example": "Littlecab"
+               },
+               "to": {
+                  "type": "array",
+                  "description": "List of mobile numbers in the international format receiving your message",
+                  "example": [
+                     "+254700000001",
+                     "+254700000002",
+                     "+254700000003"
+                  ],
+                  "items": {
+                     "type": "string",
+                     "description": "Mobile number of the recipient of the message with the country code included",
+                     "example": "+254700000001"
+                  }
+               },
+               "text": {
+                  "type": "string",
+                  "description": "Your message to the recipient user",
+                  "example": "Welcome to our Little world."
+               }
+            },
+            "description": "Any payload to send a message to multiple numbers should be in this format"
+         },
+         "SuccessResponseModel": {
+            "type": "object",
+            "properties": {
+               "status": {
+                  "type": "boolean",
+                  "description": "Status of the response, when unsuccessful this value will be `false`",
+                  "example": true
+               },
+               "message": {
+                  "type": "string",
+                  "description": "Successful message to your previous request. Messages:\n * `Request sent to queue` => \"Your messages are being processed for delivery to your different recipients\"\n",
+                  "example": "Request sent to queue"
+               }
+            },
+            "description": "Any successful response will have this format"
+         },
+         "FailureResponseModel": {
+            "type": "object",
+            "properties": {
+               "status": {
+                  "type": "boolean",
+                  "description": "Status of the response, when successful this value will be `true`",
+                  "example": false
+               },
+               "reason": {
+                  "type": "object",
+                  "properties": {
+                     "name": {
+                        "type": "string",
+                        "description": "Name of the error generated",
+                        "example": "Unauthorized"
+                     },
+                     "message": {
+                        "type": "string",
+                        "description": "Literal description of the error generated",
+                        "example": "Invalid key provided"
+                     }
+                  },
+                  "description": "Reason of the failure"
+               }
+            },
+            "description": "Any unsuccessful response with have this format"
+         },
+         "idType": {
+            "title": "idType",
+            "required": [
+               "kind"
+            ],
+            "type": "object",
+            "properties": {
+               "kind": {
+                  "type": "string"
+               },
+               "channelId": {
+                  "type": "string"
+               },
+               "videoId": {
+                  "type": "string"
+               }
+            },
+            "description": ""
+         }
+      },
+      "securitySchemes": {
+         "keyAuth": {
+            "type": "http",
+            "scheme": "bearer"
+         }
+      }
+   },
+   "security": [
+      {
+         "keyAuth": []
+      }
+   ]
+}
