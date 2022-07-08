@@ -1,0 +1,1195 @@
+---
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Tester`'><script>\xE2\x80\xAFjavascript:alert(1)</script>
+host: api.lowercase.sample.com
+basePath: "/"
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  "/response/querytemplateformheader/{param`!%&2}":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Form, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplateformheaderByParam2Post
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: query
+        required: false
+        type: string
+        minLength: 2
+        maxLength: 1000
+        pattern: "^[a-z:/.?=&]+$"
+        description: Represents the value of the custom header
+      - name: param`!%&2
+        in: path
+        required: true
+        type: array
+        items:
+          type: string
+        description: ''
+      - name: param3
+        in: formData
+        required: false
+        enum:
+        - abc
+        type: string
+        description: ''
+      - name: param4
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    patch:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Form, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplateformheaderByParam2Patch
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: string
+        minLength: 2
+        maxLength: 1000
+        pattern: "^[a-z:/.?=&]+$"
+        description: Represents the value of the custom header
+      - name: param`!%&2
+        in: path
+        required: true
+        type: array
+        items:
+          type: string
+        description: ''
+      - name: param3
+        in: formData
+        required: false
+        enum:
+        - abc
+        type: string
+        description: ''
+      - name: param4
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    delete:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Form, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplateformheaderByParam2Delete
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: string
+        minLength: 2
+        maxLength: 1000
+        pattern: "^[a-z:/.?=&]+$"
+        description: Represents the value of the custom header
+      - name: param`!%&2
+        in: path
+        required: true
+        type: array
+        items:
+          type: string
+        description: ''
+      - name: param3
+        in: formData
+        required: false
+        enum:
+        - abc
+        type: string
+        description: ''
+      - name: param4
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    put:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Form, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplateformheaderByParam2Put
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: string
+        minLength: 2
+        maxLength: 1000
+        pattern: "^[a-z:/.?=&]+$"
+        description: Represents the value of the custom header
+      - name: param`!%&2
+        in: path
+        required: true
+        type: array
+        items:
+          type: string
+        description: ''
+      - name: param3
+        in: formData
+        required: false
+        enum:
+        - abc
+        type: string
+        description: ''
+      - name: param4
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/querytemplatebodyheader/{param`!%&2}":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Body, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplatebodyheaderByParam2Post
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: body
+        required: true
+        description: Represents the value of the custom header
+        schema:
+          type: string
+          minLength: 2
+          maxLength: 1000
+          pattern: "^[a-z:/.?=&]+$"
+      - name: param`!%&2
+        in: path
+        required: true
+        type: string
+        description: "!@#$%^&*()`~"
+      - name: param3
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+          format: date
+        description: ''
+      - name: param4
+        in: header
+        required: true
+        x-testValue: '1994-02-13'
+        type: string
+        format: date
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    patch:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Body, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplatebodyheaderByParam2Patch
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: body
+        required: true
+        description: Represents the value of the custom header
+        schema:
+          type: string
+          minLength: 2
+          maxLength: 1000
+          pattern: "^[a-z:/.?=&]+$"
+      - name: param`!%&2
+        in: path
+        required: true
+        type: string
+        description: "!@#$%^&*()`~"
+      - name: param3
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+          format: date
+        description: ''
+      - name: param4
+        in: header
+        required: true
+        x-testValue: '1994-02-13'
+        type: string
+        format: date
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    delete:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Body, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplatebodyheaderByParam2Delete
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: body
+        required: true
+        description: Represents the value of the custom header
+        schema:
+          type: string
+          minLength: 2
+          maxLength: 1000
+          pattern: "^[a-z:/.?=&]+$"
+      - name: param`!%&2
+        in: path
+        required: true
+        type: string
+        description: "!@#$%^&*()`~"
+      - name: param3
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+          format: date
+        description: ''
+      - name: param4
+        in: header
+        required: true
+        x-testValue: '1994-02-13'
+        type: string
+        format: date
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    put:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Body, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplatebodyheaderByParam2Put
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: body
+        required: true
+        description: Represents the value of the custom header
+        schema:
+          type: string
+          minLength: 2
+          maxLength: 1000
+          pattern: "^[a-z:/.?=&]+$"
+      - name: param`!%&2
+        in: path
+        required: true
+        type: string
+        description: "!@#$%^&*()`~"
+      - name: param3
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+          format: date
+        description: ''
+      - name: param4
+        in: header
+        required: true
+        x-testValue: '1994-02-13'
+        type: string
+        format: date
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/querytemplateform/{param`!%&2}":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Form
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplateformByParam2Post
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: number
+        format: unix-timestamp
+        description: ''
+      - name: param`!%&2
+        in: path
+        required: true
+        type: string
+        format: date-time-rfc1123
+        description: ''
+      - name: param3
+        in: formData
+        required: true
+        type: string
+        format: date-time
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/querytemplatebody/{param`!%&2}":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Body
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplatebodyByParam2Post
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+          format: date-time
+        description: ''
+      - name: param`!%&2
+        in: path
+        required: true
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items:
+          type: number
+          format: unix-timestamp
+        description: ''
+      - name: param3
+        in: body
+        required: true
+        description: ''
+        schema:
+          type: array
+          items:
+            type: string
+            format: date-time-rfc1123
+          uniqueItems: true
+          minItems: 1
+          maxItems: 4
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/querytemplateheader/{param`!%&2}":
+    get:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplateheaderByParam2Get
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: integer
+        format: int64
+        description: ''
+      - name: param`!%&2
+        in: path
+        required: true
+        type: number
+        format: double
+        description: Represents the value of the custom header
+      - name: param3
+        in: header
+        required: true
+        type: integer
+        format: int32
+        multipleOf: 1
+        minimum: 0
+        maximum: 10
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/queryformheader":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Form, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQueryformheaderPost
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: array
+        uniqueItems: true
+        items:
+          type: array
+          items:
+            type: integer
+            minimum: 0
+            maximum: 10
+            exclusiveMinimum: true
+            exclusiveMaximum: true
+            multipleOf: 1
+            format: int32
+        description: ''
+      - name: param`!%&2
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: param3
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/querybodyheader":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Body, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerybodyheaderPost
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+        description: ''
+      - name: param`!%&2
+        in: body
+        required: true
+        description: ''
+        schema:
+          type: array
+          items:
+            "$ref": "#/definitions/SuiteCode"
+      - name: param3
+        in: header
+        required: true
+        type: array
+        items:
+          x-enum-elements:
+          - name: Sunday
+            description: Sunday fun day
+          - name: Monday
+            description: ''
+          - name: Tuesday
+            description: ''
+          - name: Wednesday_
+            description: ''
+          - name: Thursday
+            description: ''
+          - name: Fri day
+            description: ''
+          - name: Saturday
+            description: ''
+          type: string
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/templateformheader/{param`!%1}":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Template, Form, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseTemplateformheaderByParam1Post
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: path
+        required: true
+        type: string
+        description: ''
+      - name: param`!%&2
+        in: formData
+        required: true
+        type: string
+        minLength: 2
+        maxLength: 1000
+        pattern: "^[a-z:/.?=&]+$"
+        description: Represents the value of the custom header
+      - name: param3
+        in: header
+        required: true
+        type: array
+        items:
+          type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/templatebodyheader/{param`!%1}":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Template, Body, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseTemplatebodyheaderByParam1Post
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: path
+        required: true
+        enum:
+        - abc
+        type: string
+        description: ''
+      - name: param`!%&2
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: param3
+        in: body
+        required: true
+        description: ''
+        schema:
+          type: string
+          enum:
+          - abc
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/querytemplate/{param`!%&2}":
+    get:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Template
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerytemplateByParam2Get
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: string
+        description: "!@#$%^&*()`~"
+      - name: param`!%&2
+        in: path
+        required: true
+        type: array
+        items:
+          type: string
+          format: date
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/queryform":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Form
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQueryformPost
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        x-testValue: '1994-02-13'
+        type: string
+        format: date
+        description: ''
+      - name: param`!%&2
+        in: formData
+        required: true
+        type: number
+        format: unix-timestamp
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/queryheader":
+    get:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQueryheaderGet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: string
+        format: date-time-rfc1123
+        description: ''
+      - name: param`!%&2
+        in: header
+        required: true
+        type: string
+        format: date-time
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/querybody":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Query, Body
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseQuerybodyPost
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+          format: date-time
+        description: ''
+      - name: param`!%&2
+        in: body
+        required: true
+        description: ''
+        schema:
+          type: array
+          items:
+            type: number
+            format: unix-timestamp
+          uniqueItems: true
+          minItems: 1
+          maxItems: 4
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/templateform/{param`!%1}":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Template, Form
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseTemplateformByParam1Post
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: path
+        required: true
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items:
+          type: string
+          format: date-time-rfc1123
+        description: ''
+      - name: param`!%&2
+        in: formData
+        required: true
+        type: integer
+        format: int64
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/templatebody/{param`!%1}":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Template, Body
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseTemplatebodyByParam1Post
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: path
+        required: true
+        type: number
+        format: double
+        description: Represents the value of the custom header
+      - name: param`!%&2
+        in: body
+        required: true
+        description: ''
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 10
+          multipleOf: 1
+          format: int32
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/templateheader/{param`!%1}":
+    get:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Template, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseTemplateheaderByParam1Get
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: path
+        required: true
+        type: array
+        uniqueItems: true
+        items:
+          type: array
+          items:
+            type: integer
+            minimum: 0
+            maximum: 10
+            exclusiveMinimum: true
+            exclusiveMaximum: true
+            multipleOf: 1
+            format: int32
+        description: ''
+      - name: param`!%&2
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/formheader":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Form, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseFormheaderPost
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: param`!%1
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: param`!%&2
+        in: header
+        required: true
+        type: array
+        items:
+          type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  "/response/bodyheader":
+    post:
+      description: This is a test description for date thingy $#@!$%^&*()~`%x('ls
+        -al /')
+      summary: Body, Header
+      tags:
+      - <<SCRIPT>alert("XSS");//<</SCRIPT>
+      operationId: ResponseBodyheaderPost
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: param`!%1
+        in: body
+        required: true
+        description: ''
+        schema:
+          type: array
+          items:
+            "$ref": "#/definitions/SuiteCode"
+      - name: param`!%&2
+        in: header
+        required: true
+        type: array
+        items:
+          x-enum-elements:
+          - name: Sunday
+            description: Sunday fun day
+          - name: Monday
+            description: ''
+          - name: Tuesday
+            description: ''
+          - name: Wednesday_
+            description: ''
+          - name: Thursday
+            description: ''
+          - name: Fri day
+            description: ''
+          - name: Saturday
+            description: ''
+          type: string
+          enum:
+          - Sunday
+          - Monday
+          - Tuesday
+          - Wednesday
+          - Thursday
+          - Friday
+          - Saturday
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+          headers: {}
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  SuiteCode:
+    title: SuiteCode
+    description: A integer based enum representing a Suite in a game of cards
+    example: 1
+    x-enum-elements:
+    - name: Hearts
+      description: "<3"
+    - name: Spades
+      description: ''
+    - name: Clubs
+      description: ''
+    - name: Diamonds
+      description: ''
+    type: integer
+    format: int32
+    enum:
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+tags:
+- name: <<SCRIPT>alert("XSS");//<</SCRIPT>
+  description: ''
