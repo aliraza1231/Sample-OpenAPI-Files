@@ -1,0 +1,282 @@
+---
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Multiple Authentication Tests
+  contact: {}
+host: api.lowercase.sample.com
+basePath: "/"
+securityDefinitions:
+  basicAuth:
+    type: basic
+    description: A user must provide his user name and password used for logging into
+      ABC product.
+  oAuth2_authorization_code:
+    type: oauth2
+    description: OAuth 2.0 flows.
+    flow: accessCode
+    authorizationUrl: http://example.com/authorize
+    tokenUrl: http://exampletoken.com/token
+    scopes:
+      '123': ''
+      notes-:read: Can read al"alert('xxs')"l notes.
+      notes-write: Can create, update and delete notes."alert('xxs')"
+      meow: ''
+  oAuth2_client_credentials:
+    type: oauth2
+    description: OAuth 2.0 flows.
+    flow: application
+    tokenUrl: http://exampletoken.com/tokenaaaa
+    scopes:
+      '123': ''
+      notes-:read: Can read al"alert('xxs')"l notes.
+      notes-write: Can create, update and delete notes."alert('xxs')"
+      meow: ''
+  oAuth2_implicit:
+    type: oauth2
+    description: OAuth 2.0 flows.
+    flow: implicit
+    authorizationUrl: http://example.com/authorize
+    scopes:
+      '123': ''
+      notes-:read: Can read al"alert('xxs')"l notes.
+      notes-write: Can create, update and delete notes."alert('xxs')"
+      meow: ''
+  oAuth2Again_authorization_code:
+    type: oauth2
+    description: OAuth 2.0 flows again with different URLs.
+    flow: accessCode
+    authorizationUrl: http://examples.com/authorizeAgain
+    tokenUrl: http://examplestoken.com/tokenAgain
+    scopes:
+      '123': ''
+      book:-read: Can read al"alert('xxs')"l notes.
+      book-write: Can create, update and delete notes."alert('xxs')"
+      novel-read: ''
+  oAuth2Again_client_credentials:
+    type: oauth2
+    description: OAuth 2.0 flows again with different URLs.
+    flow: application
+    tokenUrl: http://examplestoken.com/tokenAgain
+    scopes:
+      '123': ''
+      book:-read: Can read al"alert('xxs')"l notes.
+      book-write: Can create, update and delete notes."alert('xxs')"
+      novel-read: ''
+  apiHeader:
+    type: apiKey
+    description: A user can alternatively provide an API key to log into the service
+    name: key
+    in: header
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  "/override":
+    get:
+      description: This endpoint overrides globally applied auth.
+      summary: OverridesAuth
+      tags:
+      - ABC
+      operationId: OverridesAuth
+      deprecated: false
+      produces:
+      - text/plain
+      parameters: []
+      responses:
+        '204':
+          description: ''
+          schema:
+            type: string
+            default: ''
+            format: date-time-rfc1123
+          headers: {}
+      x-security-options-meta:
+      - name: No Authentication
+        description: Applying authentication is optional.
+      - name: API Header
+      - name: Double OAuth 2 With Authorization Code and Client Credentials and API
+          header
+        description: Apply a double layer of OAuth 2.0 authorization code and client
+          credential flows as well as an API header.
+      - description: ''
+      - name: API Header and OAuth 2.0 Client Credentials
+        description: Apply a combination of API Header and OAuth 2.0 client credentials
+          flows.
+      - description: ''
+      - name: Double OAuth 2 Implicit and Client Credentials and API Header          
+      security:
+      - {}
+      - apiHeader: []
+      - oAuth2_authorization_code:
+        - notes-:read
+        - meow
+        oAuth2Again_client_credentials:
+        - book:-read
+        - novel-read
+        apiHeader: []
+      - oAuth2_client_credentials:
+        - notes-:read
+        - meow
+        oAuth2Again_authorization_code:
+        - book:-read
+        - novel-read
+        apiHeader: []
+      - oAuth2_client_credentials:
+        - notes-:read
+        - meow
+        oAuth2Again_client_credentials:
+        - book:-read
+        - novel-read
+        apiHeader: []
+      - oAuth2_implicit:
+        - notes-:read
+        - meow
+        oAuth2Again_authorization_code:
+        - book:-read
+        - novel-read
+        apiHeader: []
+      - oAuth2_implicit:
+        - notes-:read
+        - meow
+        oAuth2Again_client_credentials:
+        - book:-read
+        - novel-read
+        apiHeader: []
+  "/globalauth":
+    get:
+      description: This endpoint uses globally applied auth.
+      summary: GlobalAuth
+      tags:
+      - ABC
+      operationId: GlobalAuth
+      deprecated: true
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            default: ''
+            items:
+              type: string
+              format: date
+          examples:
+            application/json:
+            - '1994-02-13'
+            - '1994-02-13'
+          headers: {}
+      externalDocs:
+        url: http://swagger.io/endpoint1
+        description: Swagger URL Endpoint 1
+  "/noauth":
+    get:
+      description: This endpoint does not use auth.
+      summary: NoAuth
+      tags:
+      - ABC
+      operationId: NoAuth
+      deprecated: true
+      produces:
+      - application/json
+      parameters:
+      - name: array
+        in: query
+        required: true
+        type: boolean
+        description: ''
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            default: ''
+            items:
+              type: string
+              format: date
+          examples:
+            application/json:
+            - '1994-02-13'
+            - '1994-02-13'
+          headers: {}
+      security: []
+      externalDocs:
+        url: http://swagger.io/endpoint1
+        description: Swagger URL Endpoint 1
+security:
+- apiHeader: []
+  basicAuth: []
+- oAuth2_authorization_code:
+  - notes-:read
+  oAuth2Again_authorization_code:
+  - book-write
+- oAuth2_authorization_code:
+  - notes-:read
+  oAuth2Again_client_credentials:
+  - book-write
+- oAuth2_client_credentials:
+  - notes-:read
+  oAuth2Again_authorization_code:
+  - book-write
+- oAuth2_client_credentials:
+  - notes-:read
+  oAuth2Again_client_credentials:
+  - book-write
+- oAuth2_implicit:
+  - notes-:read
+  oAuth2Again_authorization_code:
+  - book-write
+- oAuth2_implicit:
+  - notes-:read
+  oAuth2Again_client_credentials:
+  - book-write
+- apiHeader: []
+  oAuth2_authorization_code:
+  - notes-write
+- apiHeader: []
+  oAuth2_client_credentials:
+  - notes-write
+- apiHeader: []
+  oAuth2_implicit:
+  - notes-write
+- basicAuth: []
+  oAuth2Again_authorization_code:
+  - book:-read
+- basicAuth: []
+  oAuth2Again_client_credentials:
+  - book:-read
+x-security-options-meta:
+- name: API Header and Basic Authentication
+  description: Authenticate with a combination of API header and basic authentication.
+- name: Double OAuth 2 With Authorization Code
+  description: Apply a double layer of OAuth 2.0 authorization code flows.
+- name: Double OAuth 2 With Authorization Code and Client Credentials
+  description: Apply a double layer of OAuth 2.0 authorization code and client credential
+    flows.
+- description: ''
+- name: Double OAuth 2 With Client Credentials
+  description: Apply a double layer of OAuth 2.0 client credentials flows.
+- description: ''
+- name: Double OAuth 2 Implicit and Client Credentials
+- name: API Header and OAuth 2.0 Authorization Code
+  description: Apply a combination of API Header and OAuth 2.0 authorization code
+    flows.
+- name: API Header and OAuth 2.0 Client Credentials
+  description: Apply a combination of API Header and OAuth 2.0 client credentials
+    flows.
+- name: API Header and OAuth 2.0 Implicit
+  description: Apply a combination of API Header and OAuth 2.0 implicit flows.
+- name: Basic Authentication and OAuth 2.0 Authorization Code
+  description: Apply a combination of basic authentication and OAuth 2.0 authorization
+    code flows.
+- name: Basic Authentication and OAuth 2.0 Client Credentials
+  description: Apply a combination of basic authentication and OAuth 2.0 client credentials
+    flows.  
+tags:
+- name: ABC
+  description: ''
