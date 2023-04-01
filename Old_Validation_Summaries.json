@@ -5,7 +5,7 @@
 	{
 		"Message": "Endpoint has an unused template parameter.  (<a href=\"https://docs.apimatic.io/rulesets/apimatic-preliminary-linting/atleast-one-template-parameter-reference\" target=\"_blank\" rel=\"nofollow\">APIMATICPRE_L043</a>)<br/><b>Source</b>: <i><code>API > Endpoints > pet[4] > Find pet by ID [GET, /pet/{petId}] > Parameters[0] > petid > Parameter Format</code></i>. <br/><b>Parameter Format</b>: <i><code>Template</code></i><br/><b>Parameter Name</b>: <i><code>petid</code></i><br/><b>Endpoint Relative Path</b>: <i><code>/pet/{petId}</code></i>. ",
 		"Hints": ["Did you forget to use the template parameter in the endpoint route?", "Make sure that the parameter is used in the endpoint route and is surrounded by curly braces e.g. /message/{id}.", "Remove the template parameter definition from endpoint parameters."],
-		"JsonPath": "#/Endpoints/4/Parameters/0/ParamFormat",
+		"JsonPath": "#/Endpoints/4/Parameters/0/ParamFormat"
 	}, 
 	{
 		"Message": "Beware! Endpoint contains a template parameter declared as optional.  (<a href=\"https://docs.apimatic.io/rulesets/apimatic-preliminary-linting/optional-template-path-parameters\" target=\"_blank\" rel=\"nofollow\">APIMATICPRE_L042</a>)<br/><b>Source</b>: <i><code>API > Endpoints > pet[7] > uploadFile [POST, /pet/{petId}/uploadImage] > Parameters[0] > petId > Parameter Format</code></i>. <br/><b>Parameter Name</b>: <i><code>petId</code></i><br/><b>Endpoint Route</b>: <i><code>/pet/{petId}/uploadImage</code></i><br/><b>Endpoint Name</b>: <i><code>uploadFile</code></i>. ",
@@ -16,5 +16,5 @@
 		"Message": "One or more elements in the API specification has a missing description.  (<a href=\"https://docs.apimatic.io/rulesets/apimatic-docs-linting/required-description-all-entities\" target=\"_blank\" rel=\"nofollow\">APIMATICDOCS_L001</a>)<br/><b>Source</b>: <i><code>API</code></i>. ",
 		"Hints": ["Make sure all components translated into APIMatic have a description set."],
 		"JsonPath": "#"
-	}],
+	}]
 }
