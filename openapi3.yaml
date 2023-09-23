@@ -118,7 +118,7 @@ components:
           description: The three-characters.
           maxLength: 3
           minLength: 3
-          type: string
+          type: sring
         value:
           description: The amount of the transaction.
           format: int64
