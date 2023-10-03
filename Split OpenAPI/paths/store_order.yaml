@@ -1,0 +1,26 @@
+post:
+  tags:
+    - store
+  summary: Place an order for a pet
+  description: Place a new order in the store
+  operationId: placeOrder
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\Order.yaml
+      application/xml:
+        schema:
+          $ref: ..\components\schemas\Order.yaml
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ..\components\schemas\Order.yaml
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Order.yaml
+    '405':
+      description: Invalid input
