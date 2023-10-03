@@ -1,0 +1,7 @@
+description: List of user object
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        $ref: ..\schemas\User.yaml
