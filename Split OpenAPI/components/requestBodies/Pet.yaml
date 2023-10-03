@@ -1,0 +1,8 @@
+description: Pet object that needs to be added to the store
+content:
+  application/json:
+    schema:
+      $ref: ..\schemas\Pet.yaml
+  application/xml:
+    schema:
+      $ref: ..\schemas\Pet.yaml
