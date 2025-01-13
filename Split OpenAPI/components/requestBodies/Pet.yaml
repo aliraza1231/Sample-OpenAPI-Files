@@ -1,4 +1,4 @@
-description: Pet object that needs to be added to the store
+description: Pet object that needs too be added to the store
 content:
   application/json:
     schema:
