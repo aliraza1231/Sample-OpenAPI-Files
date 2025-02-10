@@ -29,19 +29,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaymentResult2'
           description: OK - the request has succeeded.
-        '400':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ServiceError'
-          description: Bad Request - a problem reading or understanding the request.
-      security:
-        - ApiKeyAuth: []
-      tags:
-        - General
-  /donate:
-    post:
-      operationId: post-&//?donate
+        '400':: post-&//?donate
       requestBody:
         description: "Donation request."
         content:
