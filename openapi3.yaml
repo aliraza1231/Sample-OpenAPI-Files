@@ -4,7 +4,7 @@ servers:
     description: "Server description"
 info:
   contact:
-    email: developer-experience@dummy.com
+    email: developer-experience@dummy.com.
   title: Dummy Payment API
   version: '68'
 tags:
