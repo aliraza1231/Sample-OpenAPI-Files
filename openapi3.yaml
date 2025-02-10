@@ -46,38 +46,14 @@ paths:
                     additionalProperties:
                       type: string
                     description: This field contains additional data, which may be returned in a particular modification response.
-                    type: object
-                  pspReference:
-                    description: 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.
-                    type: string
-                  response:
-                    description: Indicates if the modification request has been received for processing.
-                    enum:
-                      - '[capture-received]'
-                      - '[cancel-received]'
-                      - '[refund-received]'
-                      - '[cancelOrRefund-received]'
-                      - '[adjustAuthorisation-received]'
-                      - '[donation-received]'
-                      - '[technical-cancel-received]'
-                      - '[voidPendingRefund-received]'
+               received]'
                     type: string
                 required:
                   - response
-                  - pspReference
-                type: object
-          description: OK - the request has succeeded.
-        '400':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ServiceError'
-          description: Bad Request - a problem reading or understanding the request.
+                  - pspon: Bad Request - a problem reading or understanding the request.
       security: []
       summary: Create a donation
-      tags:
-        - Modifications
-components:
+
   schemas:
     AdditionalDataWallets:
       properties:
