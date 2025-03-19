@@ -1,10 +1,10 @@
-openapi: 3.0.3
+.openapi: 3.0.3
 servers:
   - url: https://dummy.com
     description: "Server description"
 info:
   contact:
-    email: developer-experience@dummy.com
+    email: developer-experience@dummy.com...
   title: Dummy Payment API
   version: '68'
 tags:
@@ -29,19 +29,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaymentResult2'
           description: OK - the request has succeeded.
-        '400':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ServiceError'
-          description: Bad Request - a problem reading or understanding the request.
-      security:
-        - ApiKeyAuth: []
-      tags:
-        - General
-  /donate:
-    post:
-      operationId: post-&//?donate
+        '400':: post-&//?donate
       requestBody:
         description: "Donation request."
         content:
@@ -58,38 +46,14 @@ paths:
                     additionalProperties:
                       type: string
                     description: This field contains additional data, which may be returned in a particular modification response.
-                    type: object
-                  pspReference:
-                    description: 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.
-                    type: string
-                  response:
-                    description: Indicates if the modification request has been received for processing.
-                    enum:
-                      - '[capture-received]'
-                      - '[cancel-received]'
-                      - '[refund-received]'
-                      - '[cancelOrRefund-received]'
-                      - '[adjustAuthorisation-received]'
-                      - '[donation-received]'
-                      - '[technical-cancel-received]'
-                      - '[voidPendingRefund-received]'
+               received]'
                     type: string
                 required:
                   - response
-                  - pspReference
-                type: object
-          description: OK - the request has succeeded.
-        '400':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ServiceError'
-          description: Bad Request - a problem reading or understanding the request.
+                  - pspon: Bad Request - a problem reading or understanding the request.
       security: []
       summary: Create a donation
-      tags:
-        - Modifications
-components:
+
   schemas:
     AdditionalDataWallets:
       properties:
@@ -210,23 +174,6 @@ components:
           type: string
         targetAccount:
           type: string
-      type: object
-    ResponseAdditionalData3DSecure:
-      properties:
-        cardHolderInfo:
-          description: 'Information provided by the issuer to the cardholder. If this field is present, you need to display this information to the cardholder.'
-          type: string
-        cavv:
-          description: The Cardholder Authentication Verification Value (CAVV) for the 3D Secure authentication session, as a Base64-encoded 20-byte array.
-          type: string
-        cavvAlgorithm:
-          description: The CAVV algorithm used.
-          type: string
-        scaExemptionRequested:
-          type: string
-        threeds2.cardEnrolled:
-          description: Indicates whether a card is enrolled for 3D Secure 2.
-          type: boolean
       type: object
     ResponseAdditionalDataBillingAddress:
       properties:
